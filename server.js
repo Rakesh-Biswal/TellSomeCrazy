@@ -39,8 +39,8 @@ app.post('/interactions', async (req, res) => {
 
 app.get('/interactions', async (req, res) => {
     try {
-        const interactions = await Interaction.find();
-        res.status(200).send(interactions);
+        const interactions = await Interaction.findOne();
+        res.send(interactions);
     } catch (error) {
         res.status(500).send(error);
     }
